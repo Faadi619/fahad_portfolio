@@ -32,11 +32,13 @@ banner "CMedia App Banner.png"       cmedia
 banner "EDU Gigs App Banner.png"     edugigs
 
 echo "Portrait →  $IMG"
-# Stays PNG: the source has a removed (transparent) background, and
+# Stays PNG: the source is a cutout with a transparent background, and
 # flattening to JPEG would paint it solid white. The page sits the
-# cutout on a gradient, so transparency has to survive.
-sips -s format png "$D/Fahad_Image-removebg.png" \
-  --resampleWidth 800 --out "$IMG/fahad.png" >/dev/null
+# cutout on a tinted field, so transparency has to survive.
+#
+# Source is only 430x498, so it is copied at native size rather than
+# upscaled — the page displays it small enough to stay crisp.
+sips -s format png "Fahad Image.png" --out "$IMG/fahad.png" >/dev/null
 printf '  %-22s %s\n' "fahad.png" "$(du -h "$IMG/fahad.png" | cut -f1)"
 
 echo "Resume →  ./"

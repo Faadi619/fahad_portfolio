@@ -208,8 +208,10 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  /* Portrait column is narrower than the old full-body frame, so the
+     headline gets the extra width. */
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
 @media (max-width: 860px) {
@@ -254,34 +256,44 @@ h1, h2, h3 { text-wrap: balance; }
   letter-spacing: .1em; color: var(--slate-faint);
 }
 
-/* Cutout portrait standing on a tinted field, anchored to the
-   base so it reads as standing rather than floating. */
+/* Headshot cutout on a tinted disc. The source is only 430px wide,
+   so the frame is capped well under that to keep it crisp — a
+   portrait this size reads better restrained than blown up. */
 .hero__portrait {
   position: relative;
-  border-radius: var(--radius);
-  background: linear-gradient(165deg,
-    color-mix(in srgb, var(--signal) 20%, var(--paper-sunk)),
-    var(--paper-sunk) 72%);
-  aspect-ratio: 4 / 5;
+  width: min(100%, 20rem);
+  margin-inline: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(120% 120% at 50% 15%,
+    color-mix(in srgb, var(--signal) 22%, var(--paper-sunk)),
+    var(--paper-sunk) 70%);
   display: flex; align-items: flex-end; justify-content: center;
   overflow: hidden;
 }
 .hero__portrait img {
-  /* Source has generous empty margins around the cutout, so it is
-     scaled past the frame and clipped at the base to fill it. */
-  width: auto; height: 168%;
+  /* Sits the shoulders on the lower edge of the disc so the crop
+     reads deliberate rather than cut off. */
+  width: 88%; height: auto;
   object-fit: contain; object-position: bottom;
-  transform: translateY(11%);
-  filter: drop-shadow(0 18px 32px rgba(16, 20, 24, .22));
+  filter: drop-shadow(0 12px 24px rgba(16, 20, 24, .20));
 }
 :root[data-theme="dark"] .hero__portrait img {
-  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, .5));
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, .45));
 }
 
-/* Declared after the base rule so it actually wins the cascade:
-   on narrow screens the headline and stats carry the hero alone. */
+/* Declared after the base rule so it actually wins the cascade.
+   The headshot is compact enough to keep on mobile — it moves above
+   the headline and shrinks rather than disappearing. */
 @media (max-width: 860px) {
-  .hero__portrait { display: none; }
+  .hero__grid { grid-template-areas: 'portrait' 'body'; }
+  .hero__body { grid-area: body; }
+  .hero__portrait {
+    grid-area: portrait;
+    width: min(58%, 12rem);
+    margin-inline: 0;
+    margin-bottom: .5rem;
+  }
 }
 
 /* Stat readout */
