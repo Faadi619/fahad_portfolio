@@ -7,8 +7,8 @@ cd "$(dirname "$0")"
 
 B="AppSpot Banners"
 D="Fahad Documents"
-OUT="site/assets/projects"
-IMG="site/assets/img"
+OUT="assets/projects"
+IMG="assets/img"
 mkdir -p "$OUT" "$IMG"
 
 # banner <source-file> <output-slug>
@@ -39,9 +39,9 @@ sips -s format png "$D/Fahad_Image-removebg.png" \
   --resampleWidth 800 --out "$IMG/fahad.png" >/dev/null
 printf '  %-22s %s\n' "fahad.png" "$(du -h "$IMG/fahad.png" | cut -f1)"
 
-echo "Resume →  site/"
-cp "$D/Fahad_Hussain_CV.pdf" site/resume.pdf
-printf '  %-22s %s\n' "resume.pdf" "$(du -h site/resume.pdf | cut -f1)"
+echo "Resume →  ./"
+cp "$D/Fahad_Hussain_CV.pdf" resume.pdf
+printf '  %-22s %s\n' "resume.pdf" "$(du -h resume.pdf | cut -f1)"
 
 echo
-echo "Total: $(du -sh site/assets | cut -f1)"
+echo "Total: $(du -sh assets | cut -f1)"
