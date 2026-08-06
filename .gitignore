@@ -10,6 +10,10 @@
 Fahad Documents/
 AppSpot Banners/
 
+# Portrait source. build-images.sh copies it to assets/img/fahad.png,
+# which is the version the site actually serves.
+Fahad Image.png
+
 # The brief, kept local.
 Initial_Instructions.md
 
