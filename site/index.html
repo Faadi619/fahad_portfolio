@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fahad Hussain — Senior Flutter Developer</title>
+<meta name="description" content="Senior Flutter developer and former CTO. Six years shipping production cross-platform apps end-to-end, and directing the teams behind the systems they talk to.">
+
+<meta property="og:title" content="Fahad Hussain — Senior Flutter Developer">
+<meta property="og:description" content="Senior Flutter developer and former CTO. Production apps, native platform integration, and system architecture direction.">
+<meta property="og:type" content="website">
+
+<meta name="theme-color" content="#F7F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1216" media="(prefers-color-scheme: dark)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+  // Set theme before first paint so there is no flash of the wrong mode.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+    } catch (e) {}
+  })();
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__mark" href="#top">
+    FH<span class="topbar__dot" aria-hidden="true"></span>
+  </a>
+  <nav class="topbar__nav" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+    <span class="theme-toggle__track" aria-hidden="true">
+      <span class="theme-toggle__thumb"></span>
+    </span>
+    <span class="visually-hidden">Switch to dark mode</span>
+  </button>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero__grid">
+      <div class="hero__body">
+        <p class="rail rail--hero" id="hero-rail">
+          <span class="rail__dot" aria-hidden="true"></span>
+          <span class="rail__text">Peshawar, Pakistan &nbsp;·&nbsp; Open to senior roles</span>
+        </p>
+
+        <h1 class="hero__title">
+          Fahad<br>Hussain
+        </h1>
+
+        <p class="hero__role">Senior Flutter Developer <span class="hero__sep">/</span> Former CTO</p>
+
+        <p class="hero__lede">
+          Six years shipping production cross-platform apps end-to-end — architecture, native
+          platform integration, and App Store delivery. As CTO I led a four-developer team and
+          directed the system design behind the products my apps talked to.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#work">See the work</a>
+          <a class="btn btn--ghost" href="resume.pdf" download>
+            Download résumé
+            <span class="btn__meta">PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__portrait">
+        <img src="assets/img/fahad.png" alt="Fahad Hussain" width="800" height="1422" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+
+    <!-- Stat readout: the page's one orchestrated load moment. -->
+    <dl class="readout" id="readout">
+      <div class="readout__cell"><dt>Experience</dt><dd><span class="num" data-count="6">6</span>+ yrs</dd></div>
+      <div class="readout__cell"><dt>Projects</dt><dd><span class="num" data-count="26">26</span>+</dd></div>
+      <div class="readout__cell"><dt>Ongoing</dt><dd><span class="num" data-count="8">8</span>+</dd></div>
+      <div class="readout__cell"><dt>Fiverr orders</dt><dd><span class="num" data-count="80">80</span>+</dd></div>
+    </dl>
+  </section>
+
+  <!-- ── Work ───────────────────────────────────────────────── -->
+  <section class="section" id="work">
+    <div class="section__head reveal">
+      <h2 class="section__title">Selected work</h2>
+      <p class="section__note">
+        Each card states what I built and what I directed. Those are different things, and the
+        distinction is kept exact.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <!-- Wgoodi -->
+      <article class="card card--wide reveal">
+        <div class="card__media">
+          <img src="assets/projects/wgoodi.jpg" alt="Wgoodi fuel station management app — station list, order requests, and driver tracking screens" width="1600" height="1135" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot rail__dot--live" aria-hidden="true"></span>
+            <span class="rail__text">Live · Saudi Arabia · 1,000 stations</span>
+          </p>
+          <h3 class="card__title">Wgoodi</h3>
+          <p class="card__kicker">Fuel station management SaaS</p>
+          <p class="card__desc">
+            Full-stack platform for fuel retailers managing multi-station inventory, vendor orders,
+            staff and drivers, statistical reporting, and live telemetry from physical forecourt
+            hardware.
+          </p>
+          <ul class="card__points">
+            <li>Directed the re-architecture from a Firebase-only setup into a multi-tenant,
+              multi-role platform as it grew from a mobile tool into a full SaaS system.</li>
+            <li>Directed the system design for a live telemetry pipeline ingesting 6 packet types
+              from Technotrade PTS-2 controllers at roughly 1-second intervals, with idempotent
+              duplicate-transaction protection and secure signature verification.</li>
+            <li>Guided the design of the web dashboard — stations, orders, statistics, vendors,
+              users, and a super-admin panel — bilingual in English and Arabic with RTL layout.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Flutter mobile app built end-to-end</span>
+            <span class="authorship__led">Backend &amp; web dashboard directed — built by the engineering team</span>
+          </p>
+          <ul class="tags">
+            <li>Flutter</li><li>Node.js/Express</li><li>MongoDB</li><li>React</li>
+            <li>Socket.IO</li><li>Docker</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- GroundView Pro -->
+      <article class="card card--wide reveal">
+        <div class="card__media">
+          <img src="assets/projects/groundview.jpg" alt="GroundView Pro jobsite management app — project overview, job list, calendar, and daily report screens" width="1600" height="1200" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot rail__dot--live" aria-hidden="true"></span>
+            <span class="rail__text">App Store · Google Play · 46+ languages</span>
+          </p>
+          <h3 class="card__title">GroundView Pro</h3>
+          <p class="card__kicker">Construction jobsite management</p>
+          <p class="card__desc">
+            Native Flutter rebuild of a jobsite management platform for construction companies:
+            daily crew reports, multilingual SMS workflows, PDF sharing, and owner billing.
+          </p>
+          <ul class="card__points">
+            <li>Built a multilingual crew submission flow supporting 46+ languages selected per
+              crew member, with automatic translation to English on submission for one consistent
+              owner-facing report.</li>
+            <li>Designed a per-jobsite, timezone-aware SMS scheduler that evaluates each site’s own
+              IANA timezone independently, sending report links at 8 AM local time.</li>
+            <li>Enforced App Store Guideline 3.1.1 compliance by deliberately excluding all plan,
+              subscription, and purchase-flow UI from the mobile app, keeping billing on the web
+              surface.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end — mobile app, Flutter Web admin, Cloud Functions</span>
+          </p>
+          <ul class="tags">
+            <li>Flutter</li><li>Flutter Web</li><li>Cloud Functions</li>
+            <li>TypeScript</li><li>Stripe</li><li>Signal House SMS</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Powermate -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/powermate.jpg" alt="Powermate screen time app — app limits, blocked app screen, and group request screens" width="1600" height="975" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot rail__dot--live" aria-hidden="true"></span>
+            <span class="rail__text">App Store · Google Play</span>
+          </p>
+          <h3 class="card__title">Powermate</h3>
+          <p class="card__kicker">Screen time management</p>
+          <p class="card__desc">
+            Productivity app managing screen time through app-level timers, group accountability,
+            and an in-app coin economy for extensions.
+          </p>
+          <ul class="card__points">
+            <li>Integrated native iOS Family Controls and Time Usage APIs via Flutter Channels to
+              enforce app-level usage restrictions.</li>
+            <li>Built a group extension-request system and in-app coin purchase flow for unlocking
+              additional usage time.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags">
+            <li>Flutter</li><li>Firebase</li><li>Family Controls</li><li>In-App Purchases</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Vaqt -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/vaqt.jpg" alt="Vaqt prayer habit tracking app — prayer times, streak tracking, and daily schedule screen" width="1600" height="781" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Turkish market · Offline-first</span>
+          </p>
+          <h3 class="card__title">Vaqt <span class="card__alt">(Vaktinde)</span></h3>
+          <p class="card__kicker">Prayer habit tracking</p>
+          <p class="card__desc">
+            Flutter app helping Turkish-speaking Muslims build consistent daily prayer habits
+            through gentle, engagement-based tracking rather than guilt or pressure.
+          </p>
+          <ul class="card__points">
+            <li>Designed an offline-first data layer with Hive caching keyed by month and rounded
+              coordinates, cutting prayer-time API calls to roughly one fetch per user per month.</li>
+            <li>Implemented a 24-badge achievement system across 5 categories, evaluated live
+              against Firestore stats on every user action.</li>
+            <li>Simplified prayer-time sourcing from a two-API design to a single integration,
+              removing a city/district lookup table and reducing onboarding friction.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags">
+            <li>Flutter</li><li>Firebase</li><li>Hive</li><li>Provider</li><li>go_router</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- MEPA -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/mepa.jpg" alt="MEPA deals marketplace app — sign up, post ad, and profile screens" width="1600" height="1138" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Dual-sided · One codebase</span>
+          </p>
+          <h3 class="card__title">MEPA</h3>
+          <p class="card__kicker">Location-based deals marketplace</p>
+          <p class="card__desc">
+            Discovery app connecting users with real-time promotions, discounts, and coupon offers
+            from local businesses and global brands.
+          </p>
+          <ul class="card__points">
+            <li>Built a dual-mode app in a single Flutter codebase — consumer deal discovery and
+              advertiser ad-posting — rather than two separate products.</li>
+            <li>Implemented location-based deal targeting so users discover offers relevant to
+              where they are or plan to travel.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Dart</li></ul>
+        </div>
+      </article>
+
+      <!-- Addi Buddy -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/addibuddy.jpg" alt="Addi Buddy personal safety app — route map, alarm activation, and customisation screens" width="1600" height="1040" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Native device integration</span>
+          </p>
+          <h3 class="card__title">Addi Buddy</h3>
+          <p class="card__kicker">Personal safety &amp; connectivity</p>
+          <p class="card__desc">
+            Safety app providing emergency tools and discreet communication for users in
+            potentially dangerous situations.
+          </p>
+          <ul class="card__points">
+            <li>Built SOS emergency activation triggering audio/video recording and live location
+              sharing with trusted contacts.</li>
+            <li>Implemented tap-pattern check-ins, fake-call scheduling, and a discreet
+              app-icon-swap feature.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li><li>Platform Channels</li></ul>
+        </div>
+      </article>
+
+      <!-- 4Drivers -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/fourdrivers.jpg" alt="4Drivers fleet operations app — delivery order and signature capture screens" width="1600" height="1138" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Paperless fleet operations</span>
+          </p>
+          <h3 class="card__title">4Drivers</h3>
+          <p class="card__kicker">Fleet &amp; courier operations</p>
+          <p class="card__desc">
+            Digital platform for transport companies and express courier services, replacing paper
+            logbooks with a fully digitized operations workflow.
+          </p>
+          <ul class="card__points">
+            <li>Built driver-facing photo and signature capture — vehicle condition checks and
+              proof-of-delivery — digitizing what were paper logbooks.</li>
+            <li>Cut operational overhead by eliminating manual data entry across fleet operations.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Dart</li></ul>
+        </div>
+      </article>
+
+      <!-- Frienvite -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/frienvite.jpg" alt="Frienvite event app — event details, friend requests, and calendar screens" width="1600" height="1114" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Real-time group chat</span>
+          </p>
+          <h3 class="card__title">Frienvite</h3>
+          <p class="card__kicker">Event discovery &amp; social networking</p>
+          <p class="card__desc">
+            Platform for discovering and hosting public or private events, with integrated
+            scheduling and group chat.
+          </p>
+          <ul class="card__points">
+            <li>Built public/private event hosting with invite-only access control and an
+              integrated event calendar.</li>
+            <li>Implemented in-group chat for real-time participant communication.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li><li>Google Maps/Places</li></ul>
+        </div>
+      </article>
+
+      <!-- ConnectMe -->
+      <article class="card card--text reveal">
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Vendor migration under deadline</span>
+          </p>
+          <h3 class="card__title">ConnectMe</h3>
+          <p class="card__kicker">Referral &amp; deferred linking</p>
+          <p class="card__desc">
+            App built around a referral growth mechanic — inviting 3 new users unlocks Premium —
+            powered by deferred dynamic linking to correctly attribute installs.
+          </p>
+          <ul class="card__points">
+            <li>Migrated deferred dynamic linking from Branch.io to Chottu Link mid-development
+              after a client cost decision, without disrupting the referral flow already built.</li>
+            <li>Built install-source tracking distinguishing fresh App Store installs from existing
+              account opens, powering an accurate 3-referral unlock.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Branch.io</li><li>Chottu Link</li></ul>
+        </div>
+      </article>
+
+      <!-- Referral Program -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/referral.jpg" alt="Referral Program disaster restoration app — job intake and referral partner screens" width="1600" height="1138" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Field operations</span>
+          </p>
+          <h3 class="card__title">Referral Program</h3>
+          <p class="card__kicker">Disaster restoration workflow</p>
+          <p class="card__desc">
+            Restoration app streamlining recovery for residential and commercial properties —
+            connecting clients with restoration teams, tracking progress, and centralizing job
+            data across intake, dispatch, and reporting.
+          </p>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Dart</li></ul>
+        </div>
+      </article>
+
+      <!-- InspectStore -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/inspectstore.jpg" alt="InspectStore property inspection app — listings, survey reports, and payment screens" width="1600" height="1034" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">In-app purchase flow</span>
+          </p>
+          <h3 class="card__title">InspectStore</h3>
+          <p class="card__kicker">Property inspection reports</p>
+          <p class="card__desc">
+            Real estate platform letting buyers, investors, and renters browse verified listings
+            and securely purchase detailed inspection reports for instant access.
+          </p>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Payments</li></ul>
+        </div>
+      </article>
+
+      <!-- CMedia -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/cmedia.jpg" alt="Conscious Media social platform — onboarding, profile, and feed screens" width="1600" height="1138" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Multimedia social feed</span>
+          </p>
+          <h3 class="card__title">CMedia</h3>
+          <p class="card__kicker">Conscious Media platform</p>
+          <p class="card__desc">
+            Multimedia social platform for environmentally conscious users to share ideas, events,
+            projects, and news around sustainability and eco-awareness.
+          </p>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Dart</li></ul>
+        </div>
+      </article>
+
+      <!-- EduGigs -->
+      <article class="card reveal">
+        <div class="card__media">
+          <img src="assets/projects/edugigs.jpg" alt="EduGigs student freelance app — registration, gig posting, and freelancer discovery screens" width="1600" height="1138" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot" aria-hidden="true"></span>
+            <span class="rail__text">Two-sided marketplace</span>
+          </p>
+          <h3 class="card__title">EduGigs</h3>
+          <p class="card__kicker">Student freelance marketplace</p>
+          <p class="card__desc">
+            Platform connecting college students offering freelance services with clients
+            worldwide — job listings, self-set rates, and flexible scheduling.
+          </p>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end</span>
+          </p>
+          <ul class="tags"><li>Flutter</li><li>Dart</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── About ──────────────────────────────────────────────── -->
+  <section class="section section--split" id="about">
+    <div class="section__head reveal">
+      <h2 class="section__title">About</h2>
+    </div>
+    <div class="prose reveal">
+      <p>
+        I write Flutter, and I have spent the last five years responsible for what happens around
+        it. As CTO at AppSpot Software Solutions I led a team of four developers, set the
+        engineering standards we built against — MVVM, Clean Architecture, feature-first
+        structuring — and mentored the team on state management.
+      </p>
+      <p>
+        The work I am proudest of sits where the app meets something physical or awkward: forecourt
+        controllers streaming telemetry over a retry-heavy protocol, iOS Family Controls enforcing
+        app limits, a BLE link to an ESP32 reading live diagnostic codes out of a car. That is also
+        where the interesting decisions live — what to isolate on staging, what to keep out of the
+        mobile binary entirely, when removing an API is the better call than adding one.
+      </p>
+      <p>
+        I am comfortable owning the mobile layer completely while directing engineers on system
+        design, data modeling, and integration architecture. I am looking for senior Flutter roles,
+        or a CTO or Head of Engineering position with real technical ownership rather than a purely
+        managerial title.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Experience ─────────────────────────────────────────── -->
+  <section class="section" id="experience">
+    <div class="section__head reveal">
+      <h2 class="section__title">Experience</h2>
+    </div>
+    <ol class="timeline">
+      <li class="timeline__item reveal">
+        <p class="timeline__when">Aug 2021 — Jul 2026</p>
+        <div class="timeline__what">
+          <h3>Chief Technology Officer</h3>
+          <p class="timeline__org">AppSpot Software Solutions · Peshawar, Pakistan</p>
+          <ul>
+            <li>Led a team of 4 developers, setting engineering standards that reduced delivery
+              timelines.</li>
+            <li>Owned end-to-end Flutter development for Wgoodi while directing the system
+              architecture for its backend and web dashboard.</li>
+            <li>Directed the system design for a live telemetry integration connecting Technotrade
+              PTS-2 forecourt controllers to the platform.</li>
+            <li>Directed the decision to isolate hardware integration on a dedicated staging
+              environment, protecting production during an experimental device protocol.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item reveal">
+        <p class="timeline__when">Aug 2020 — Present</p>
+        <div class="timeline__what">
+          <h3>Flutter Developer <span class="timeline__tag">Freelance</span></h3>
+          <p class="timeline__org">Peshawar, Pakistan</p>
+          <ul>
+            <li>Built a pickup-and-delivery app with real-time location tracking and live status
+              updates.</li>
+            <li>Built a food-ordering app with geolocation-based restaurant discovery and full
+              checkout.</li>
+            <li>Built a small-business e-commerce app integrated with Ecwid’s store APIs.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ── Skills ─────────────────────────────────────────────── -->
+  <section class="section" id="skills">
+    <div class="section__head reveal">
+      <h2 class="section__title">Skills</h2>
+      <p class="section__note">
+        Split by what I write myself and what I direct. Both matter; they are not the same claim.
+      </p>
+    </div>
+
+    <div class="skills">
+      <div class="skillset reveal">
+        <h3 class="skillset__name">Flutter &amp; mobile</h3>
+        <ul>
+          <li>Flutter &amp; Dart — Provider, Bloc, MVVM, Clean Architecture</li>
+          <li>Feature-first project structuring</li>
+          <li>Offline-first &amp; local storage — Hive</li>
+          <li>Localization — Flutter intl (.arb), 46+ languages, Arabic RTL</li>
+        </ul>
+      </div>
+      <div class="skillset reveal">
+        <h3 class="skillset__name">Native integration</h3>
+        <ul>
+          <li>Flutter Platform Channels</li>
+          <li>BLE — hardware communication</li>
+          <li>iOS Family Controls / Time Usage APIs</li>
+          <li>Zeroconf / Bonsoir device discovery</li>
+        </ul>
+      </div>
+      <div class="skillset reveal">
+        <h3 class="skillset__name">Firebase &amp; payments</h3>
+        <ul>
+          <li>Firestore, Auth, FCM</li>
+          <li>Cloud Functions (TypeScript)</li>
+          <li>Stripe</li>
+          <li>In-App Purchases</li>
+        </ul>
+      </div>
+      <div class="skillset reveal">
+        <h3 class="skillset__name">Engineering leadership</h3>
+        <ul>
+          <li>Directing full-stack teams — architecture review, system design</li>
+          <li>Working literacy across Node.js/Express, MongoDB, React, WebSocket —
+            enough to direct and evaluate, distinct from hands-on coding</li>
+          <li>System design for real-time &amp; hardware integration — data integrity,
+            staging/production isolation</li>
+          <li>Team leadership &amp; mentorship</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="certs reveal">
+      <h3 class="certs__name">Certifications</h3>
+      <ul>
+        <li>
+          <span class="certs__title">Flutter &amp; Dart — The Complete Guide [2024 Edition]</span>
+          <span class="certs__meta">Udemy · Maximilian Schwarzmüller · Dec 2023</span>
+        </li>
+        <li>
+          <span class="certs__title">Dart &amp; Flutter — Zero to Mastery [2025] + Clean Architecture</span>
+          <span class="certs__meta">Udemy · Maximilian Berktold, Max Steffen · Jan 2025</span>
+        </li>
+      </ul>
+      <h3 class="certs__name certs__name--spaced">Education</h3>
+      <ul>
+        <li>
+          <span class="certs__title">BSc Computer Systems Engineering</span>
+          <span class="certs__meta">University of Engineering &amp; Technology Peshawar · 2017–2021</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────────────────── -->
+  <section class="section section--contact" id="contact">
+    <div class="reveal">
+      <h2 class="contact__title">Let’s talk</h2>
+      <p class="contact__lede">
+        Open to senior Flutter roles and hands-on engineering leadership. The fastest way to reach
+        me is email.
+      </p>
+      <a class="contact__mail" href="mailto:hussainfahad660@gmail.com">hussainfahad660@gmail.com</a>
+      <ul class="contact__links">
+        <li><a href="https://github.com/faadi619" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/thefaadi619" rel="noopener">LinkedIn</a></li>
+        <li><a href="tel:+923088432235">+92 308 8432235</a></li>
+        <li><a href="resume.pdf" download>Résumé</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Peshawar, Pakistan</p>
+  <p>English · Urdu · Pashto</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

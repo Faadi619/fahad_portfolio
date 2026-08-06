@@ -1,0 +1,24 @@
+# ──────────────────────────────────────────────────────────────
+# Source material — NEVER commit. This repo is public.
+#
+# "Fahad Documents/" holds identity and financial records: CNIC,
+# domicile, bank statements, tax certificates, a signature image,
+# ngrok recovery codes, and a family member's documents. None of
+# it belongs on GitHub. The site needs none of it at runtime —
+# build-images.sh reads these locally and writes into site/.
+# ──────────────────────────────────────────────────────────────
+Fahad Documents/
+AppSpot Banners/
+
+# The brief, kept local.
+Initial_Instructions.md
+
+# ── OS / tooling ──────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+node_modules/
+*.log
+
+# ── Scratch ───────────────────────────────────────────────────
+.tmp/
+*.tmp
