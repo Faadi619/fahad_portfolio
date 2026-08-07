@@ -42,6 +42,9 @@ echo "Portrait →  $IMG"
 sips -s format png "Fahad Image.png" --out "$IMG/fahad.png" >/dev/null
 printf '  %-22s %s\n' "fahad.png" "$(du -h "$IMG/fahad.png" | cut -f1)"
 
+echo "Tab icon →  $IMG"
+python3 make-favicon.py
+
 echo "Resume →  ./"
 cp "$D/Fahad_Hussain_CV.pdf" resume.pdf
 printf '  %-22s %s\n' "resume.pdf" "$(du -h resume.pdf | cut -f1)"
