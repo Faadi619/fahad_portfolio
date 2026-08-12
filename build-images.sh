@@ -31,6 +31,7 @@ banner "InspectStore App Banner.png" inspectstore
 banner "CMedia App Banner.png"       cmedia
 banner "EDU Gigs App Banner.png"     edugigs
 banner "ConnectMe_cover_1600x900.png" connectme
+banner "Nail App Banner.png"         dvna
 
 echo "Portrait →  $IMG"
 # Stays PNG: the source is a cutout with a transparent background, and

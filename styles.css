@@ -616,6 +616,57 @@ h1, h2, h3 { text-wrap: balance; }
   color: var(--slate);
 }
 
+/* ── Testimonials ───────────────────────────────────────── */
+/* Columns rather than a grid: the quotes vary a lot in length, and
+   column flow packs them without leaving ragged gaps. */
+.quotes {
+  columns: 2;
+  column-gap: clamp(1rem, 2vw, 1.5rem);
+}
+@media (max-width: 820px) {
+  .quotes { columns: 1; }
+}
+
+.quote {
+  break-inside: avoid;
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+.quote blockquote {
+  margin: 0;
+  font-size: .9375rem;
+  color: var(--ink-soft);
+}
+/* Decorative opening mark only — a trailing quote glyph after a
+   multi-sentence testimonial reads as a stray character. */
+.quote blockquote::before {
+  content: '“';
+  color: var(--signal);
+  font: 600 1.75rem/0 var(--display);
+  margin-right: .12em;
+  vertical-align: -.3em;
+}
+
+.quote figcaption {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem;
+  margin-top: 1rem;
+  padding-top: .85rem;
+  border-top: 1px solid var(--line);
+}
+.quote__who {
+  font: 600 .875rem/1.2 var(--display);
+  letter-spacing: -.01em;
+}
+.quote__role {
+  font: 500 .625rem/1.4 var(--mono);
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--slate);
+}
+
 /* ── Contact ────────────────────────────────────────────── */
 .section--contact {
   padding-bottom: var(--stack);
