@@ -455,6 +455,37 @@ h1, h2, h3 { text-wrap: balance; }
 .authorship__built { color: var(--signal); }
 .authorship__led   { color: var(--amber); }
 
+/* Live links — where you can actually get the thing. Sits directly
+   under the authorship line so "who built it" and "where it ships"
+   read together. */
+.links {
+  display: flex; flex-wrap: wrap; gap: .4rem .5rem;
+}
+.links a {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font: 500 .6875rem/1 var(--mono);
+  letter-spacing: .04em;
+  text-decoration: none;
+  color: var(--ink);
+  padding: .42rem .6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  transition: border-color .2s var(--ease), background-color .2s var(--ease),
+              color .2s var(--ease);
+}
+.links a::after {
+  content: '↗';
+  font-size: .9em;
+  color: var(--slate-faint);
+  transition: color .2s var(--ease);
+}
+.links a:hover {
+  border-color: var(--signal);
+  background: color-mix(in srgb, var(--signal) 8%, transparent);
+  color: var(--signal);
+}
+.links a:hover::after { color: var(--signal); }
+
 .tags {
   display: flex; flex-wrap: wrap; gap: .35rem;
 }
