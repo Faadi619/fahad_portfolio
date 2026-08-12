@@ -548,9 +548,24 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: .875rem; color: var(--slate);
   margin: .3rem 0 .9rem;
 }
+/* Prose lead-in for entries that need context before their bullets. */
+.timeline__note {
+  font-size: .9375rem; color: var(--ink-soft);
+  margin-bottom: .9rem;
+  max-width: var(--measure);
+}
+.timeline__note q {
+  quotes: '“' '”';
+  font-style: italic;
+  color: var(--ink);
+}
+
 .timeline__what ul {
   display: flex; flex-direction: column; gap: .5rem;
   font-size: .9375rem; color: var(--ink-soft);
+}
+.timeline__what strong {
+  font-weight: 600; color: var(--ink);
 }
 .timeline__what li { position: relative; padding-left: 1.05rem; }
 .timeline__what li::before {
