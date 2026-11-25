@@ -107,92 +107,65 @@
     </dl>
   </section>
 
-  <!-- ── Featured case study ────────────────────────────────── -->
+  <!-- ── Work ───────────────────────────────────────────────── -->
   <section class="section" id="work">
     <div class="section__head reveal">
-      <h2 class="section__title">Featured project</h2>
-    </div>
-
-    <article class="case reveal">
-      <div class="case__media">
-        <img src="assets/projects/ama.jpg" alt="AMA horse marketplace in Arabic: the home page on desktop, plus the listings and a horse detail page on mobile" width="1600" height="1000" loading="lazy" decoding="async">
-      </div>
-
-      <div class="case__head">
-        <p class="rail">
-          <span class="rail__dot rail__dot--live" aria-hidden="true"></span>
-          <span class="rail__text">Live · Saudi Arabia · Arabic-first</span>
-        </p>
-        <h3 class="case__title">AMA: an Arabic-first marketplace for Arabian horses</h3>
-        <p class="case__result">
-          <strong>About 11 weeks</strong> from start to full scope, against a plan of
-          7 months part-time.
-        </p>
-      </div>
-
-      <div class="case__story">
-        <div class="case__block">
-          <h4>The problem</h4>
-          <p>
-            A Saudi client needed a trusted place to buy and sell Arabian horses online. Buyers'
-            money had to be held safely until the horse arrived, every member had to be verified,
-            and the product had to work in Arabic first, not be translated into it.
-          </p>
-        </div>
-        <div class="case__block">
-          <h4>What I built</h4>
-          <p>
-            The whole product, on a fixed-scope contract, as 18 modules:
-          </p>
-          <ul class="case__list">
-            <li>Browsing, listings, selling and accounts</li>
-            <li>Escrow orders and buyer–seller messaging</li>
-            <li>A services marketplace for vets, transporters and farriers</li>
-            <li>Identity verification for every member</li>
-            <li>An admin console for registrations, disputes, refunds and payouts</li>
-            <li>PDPL data export and erasure requests</li>
-          </ul>
-          <p>
-            It's fully right-to-left, with light and dark themes and Arabic-Indic numerals. The
-            backend is designed so a mobile app can be added later.
-          </p>
-        </div>
-        <div class="case__block">
-          <h4>How</h4>
-          <ul class="case__list">
-            <li>Only the server can write a financial record. Every payment, escrow and ledger
-              movement goes through database functions.</li>
-            <li>Payments run through Tap with mada and cards, including 3-D Secure. Webhooks are
-              HMAC-verified and processed only once, and refunds are automated.</li>
-            <li>Staging and live are separate. Every release passes unit, SQL, end-to-end, visual
-              and accessibility tests, plus a security review.</li>
-          </ul>
-        </div>
-        <div class="case__block">
-          <h4>Result</h4>
-          <p>
-            The full scope was delivered between 10 September and late November 2026, about
-            11 weeks, and the marketplace is live.
-          </p>
-          <ul class="links">
-            <li><a href="https://amahorses.sa/" target="_blank" rel="noopener noreferrer">amahorses.sa</a></li>
-          </ul>
-          <p class="case__stack">Next.js · Supabase · Tap Payments · Twilio · Vercel</p>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- ── More work ──────────────────────────────────────────── -->
-  <section class="section" id="more-work">
-    <div class="section__head reveal">
-      <h2 class="section__title">More client work</h2>
+      <h2 class="section__title">Selected work</h2>
+      <p class="section__note">
+        What each client needed, what shipped, and which parts I built myself.
+      </p>
     </div>
 
     <div class="cards">
 
+      <!-- AMA: lead case study -->
+      <article class="card card--wide card--lead reveal">
+        <div class="card__media">
+          <img src="assets/projects/ama.jpg" alt="AMA horse marketplace in Arabic: the home page on desktop, plus the listings and a horse detail page on mobile" width="1600" height="900" loading="lazy" decoding="async">
+        </div>
+        <div class="card__body">
+          <p class="rail">
+            <span class="rail__dot rail__dot--live" aria-hidden="true"></span>
+            <span class="rail__text">Live · Saudi Arabia · Arabic-first</span>
+          </p>
+          <h3 class="card__title">AMA</h3>
+          <p class="card__kicker">Arabian horse marketplace</p>
+          <p class="card__desc">
+            A Saudi client needed a trusted place to buy and sell Arabian horses online: buyers'
+            money held safely until the horse arrives, every member verified, and Arabic first
+            rather than translated.
+          </p>
+          <ul class="card__points">
+            <li><strong>What I built:</strong> the whole product, as 18 modules: listings, escrow
+              orders, messaging, a services marketplace for vets, transporters and farriers,
+              identity verification, an admin console and PDPL data requests. Fully right-to-left.</li>
+            <li><strong>How:</strong> only the server can write a financial record. Tap payments
+              (mada, 3-D Secure) with verified webhooks that run once. Separate staging and live;
+              every release passes unit, SQL, end-to-end, visual and accessibility tests and a
+              security review.</li>
+            <li><strong>Result:</strong> full scope delivered between 10 September and late
+              November 2026, and live.</li>
+          </ul>
+          <p class="authorship">
+            <span class="authorship__built">Built end-to-end, alone, on a fixed-scope contract</span>
+          </p>
+          <ul class="links">
+            <li><a href="https://amahorses.sa/" target="_blank" rel="noopener noreferrer">amahorses.sa</a></li>
+          </ul>
+          <ul class="tags">
+            <li>Next.js</li><li>Supabase</li><li>Tap Payments</li><li>Twilio</li><li>Vercel</li>
+          </ul>
+        </div>
+        <dl class="readout readout--card">
+          <div class="readout__cell"><dt>Planned</dt><dd>7 months<span class="readout__unit">part-time</span></dd></div>
+          <div class="readout__cell"><dt>Delivered</dt><dd>~11 weeks</dd></div>
+          <div class="readout__cell"><dt>Modules</dt><dd>18</dd></div>
+          <div class="readout__cell"><dt>Test devices</dt><dd>10</dd></div>
+        </dl>
+      </article>
+
       <!-- Wgoodi -->
-      <article class="card reveal">
+      <article class="card card--wide reveal">
         <div class="card__media">
           <img src="assets/projects/wgoodi.jpg" alt="Wgoodi fuel station management app: station list, order requests and driver tracking screens" width="1600" height="1135" loading="lazy" decoding="async">
         </div>
@@ -215,12 +188,12 @@
           <ul class="links">
             <li><a href="https://www.wgoodi.com/" target="_blank" rel="noopener noreferrer">Website</a></li>
           </ul>
-          <p class="card__stack">Flutter · Node.js · MongoDB · React · Socket.IO</p>
+          <ul class="tags"><li>Flutter</li><li>Node.js</li><li>MongoDB</li><li>React</li><li>Socket.IO</li></ul>
         </div>
       </article>
 
       <!-- GroundView Pro -->
-      <article class="card reveal">
+      <article class="card card--wide reveal">
         <div class="card__media">
           <img src="assets/projects/groundview.jpg" alt="GroundView Pro jobsite app: project overview, job list, calendar and daily report screens" width="1600" height="1200" loading="lazy" decoding="async">
         </div>
@@ -243,7 +216,7 @@
             <li><a href="https://groundviewpro.com/" target="_blank" rel="noopener noreferrer">Website</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.groundviewpro.app" target="_blank" rel="noopener noreferrer">Google Play</a></li>
           </ul>
-          <p class="card__stack">Flutter · Flutter Web · Cloud Functions · Stripe</p>
+          <ul class="tags"><li>Flutter</li><li>Flutter Web</li><li>Cloud Functions</li><li>Stripe</li></ul>
         </div>
       </article>
 
@@ -271,7 +244,7 @@
             <li><a href="https://apps.apple.com/us/app/powermate-control-screen-time/id6535687314" target="_blank" rel="noopener noreferrer">App Store</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.appspot.powermateapp" target="_blank" rel="noopener noreferrer">Google Play</a></li>
           </ul>
-          <p class="card__stack">Flutter · Firebase · iOS Family Controls · In-app purchases</p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li><li>iOS Family Controls</li><li>In-app purchases</li></ul>
         </div>
       </article>
 
@@ -298,7 +271,7 @@
           <ul class="links">
             <li><a href="https://usevaqt.app/" target="_blank" rel="noopener noreferrer">Website</a></li>
           </ul>
-          <p class="card__stack">Flutter · Firebase · Hive</p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li><li>Hive</li></ul>
         </div>
       </article>
 
@@ -325,7 +298,7 @@
           <ul class="links">
             <li><a href="https://apps.apple.com/us/app/nail-courses-by-diana-vig/id6503696933" target="_blank" rel="noopener noreferrer">App Store</a></li>
           </ul>
-          <p class="card__stack">Flutter · Firebase · Cloud Storage</p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li><li>Cloud Storage</li></ul>
         </div>
       </article>
 
@@ -353,7 +326,7 @@
             <li><a href="https://apps.apple.com/us/app/4-drivers-app/id6443847276" target="_blank" rel="noopener noreferrer">App Store</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.crewlink.four_drivers" target="_blank" rel="noopener noreferrer">Google Play</a></li>
           </ul>
-          <p class="card__stack">Flutter</p>
+          <ul class="tags"><li>Flutter</li></ul>
         </div>
       </article>
 
@@ -380,7 +353,7 @@
           <ul class="links">
             <li><a href="https://apps.apple.com/us/app/connectme/id6450007627" target="_blank" rel="noopener noreferrer">App Store</a></li>
           </ul>
-          <p class="card__stack">Flutter · Branch.io → Chottu Link</p>
+          <ul class="tags"><li>Flutter</li><li>Branch.io → Chottu Link</li></ul>
         </div>
       </article>
 
@@ -407,7 +380,7 @@
           <ul class="links">
             <li><a href="https://frienvite.com/" target="_blank" rel="noopener noreferrer">Website</a></li>
           </ul>
-          <p class="card__stack">Flutter · Firebase · Google Maps</p>
+          <ul class="tags"><li>Flutter</li><li>Firebase</li><li>Google Maps</li></ul>
         </div>
       </article>
 
