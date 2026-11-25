@@ -47,7 +47,7 @@ echo "Tab icon →  $IMG"
 python3 make-favicon.py
 
 echo "Resume →  ./"
-cp "$D/Fahad_Hussain_CV.pdf" resume.pdf
+cp "$D/Fahad_Hussain_Resume.pdf" resume.pdf  # rendered from Fahad_Hussain_Resume.html
 printf '  %-22s %s\n' "resume.pdf" "$(du -h resume.pdf | cut -f1)"
 
 echo
