@@ -638,13 +638,14 @@ h1, h2, h3 { text-wrap: balance; }
 .ai-note p { color: var(--ink-soft); max-width: var(--measure); }
 
 /* ── Offers ─────────────────────────────────────────────── */
+/* Three offers side by side; below 960px they stack, so there is never
+   an uneven 2 + 1 row. On desktop each card is a subgrid of the same
+   five rows (tag, title, lede, list, button), so headings, lists and
+   buttons line up across cards even when one has no lede. */
 .offers {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(1rem, 2vw, 1.5rem);
-}
-@media (max-width: 820px) {
-  .offers { grid-template-columns: 1fr; }
 }
 .offer {
   display: flex; flex-direction: column; align-items: flex-start; gap: .6rem;
@@ -675,6 +676,24 @@ h1, h2, h3 { text-wrap: balance; }
   width: 5px; height: 1.5px; background: var(--line-strong);
 }
 .offer .btn { margin-top: auto; }
+
+@media (min-width: 960px) {
+  .offers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(5, auto);
+  }
+  .offer {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: .6rem;
+  }
+  .offer__tag   { grid-row: 1; }
+  .offer__title { grid-row: 2; }
+  .offer__lede  { grid-row: 3; }
+  .offer__list  { grid-row: 4; }
+  .offer .btn   { grid-row: 5; justify-self: start; align-self: end; }
+}
 
 /* ── About ──────────────────────────────────────────────── */
 .section--split {
