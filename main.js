@@ -83,6 +83,34 @@
     });
   }
 
+  /* ── "Book a call" glow ────────────────────────────────── */
+  /* Plays once when each button first comes into view, then only
+     on hover/focus. CSS caps it at two turns; reduced motion gets
+     a static ring from CSS, so nothing is wired up here. */
+  var ctas = document.querySelectorAll('.cta-glow');
+
+  if (!reduced.matches && 'IntersectionObserver' in window) {
+    // 3000ms = two 1.5s turns (glow-orbit), the length set in styles.css.
+    var glow = function (el) {
+      if (el.classList.contains('is-glowing')) return;
+      el.classList.add('is-glowing');
+      setTimeout(function () { el.classList.remove('is-glowing'); }, 3000);
+    };
+    var glowObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        glow(entry.target);
+        glowObserver.unobserve(entry.target);
+      });
+    }, { threshold: 1 });
+
+    Array.prototype.forEach.call(ctas, function (el) {
+      glowObserver.observe(el);
+      el.addEventListener('mouseenter', function () { glow(el); });
+      el.addEventListener('focus', function () { glow(el); });
+    });
+  }
+
   /* ── Hero readout count-up ─────────────────────────────── */
   /* The page's single orchestrated load moment: the stat rail
      settles into place the way an instrument panel would. */

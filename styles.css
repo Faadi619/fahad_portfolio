@@ -266,6 +266,46 @@ h1, h2, h3 { text-wrap: balance; }
 .btn--primary:hover { transform: translateY(-2px); }
 .btn--ghost { border-color: var(--line-strong); color: var(--ink); }
 .btn--ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+/* "Book a call" attention glow: a short arc of signal green that
+   travels around the pill's edge. main.js adds .is-glowing once,
+   when the button first enters the viewport, and again on
+   hover/focus; it never loops beyond two turns. */
+@property --glow-angle {
+  syntax: '<angle>'; inherits: true; initial-value: 0deg;
+}
+.cta-glow { position: relative; isolation: isolate; }
+.cta-glow::before,
+.cta-glow::after {
+  content: ''; position: absolute; inset: -2px;
+  border-radius: inherit; pointer-events: none;
+  background: conic-gradient(from var(--glow-angle),
+    transparent 0 62%, var(--signal-bright) 82%, transparent 100%);
+  opacity: 0;
+}
+/* Both layers show only in their padding box (a ring), so the
+   glow never tints the button's own fill. */
+.cta-glow::before,
+.cta-glow::after {
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+/* Crisp 2px ring on the edge. */
+.cta-glow::before { padding: 2px; }
+/* Soft halo just outside it. */
+.cta-glow::after { inset: -9px; padding: 7px; filter: blur(4px); }
+
+.cta-glow.is-glowing::before,
+.cta-glow.is-glowing::after {
+  animation: glow-orbit 1.5s linear 2, glow-fade 3s var(--ease) 1;
+}
+.cta-glow.is-glowing::after {
+  animation: glow-orbit 1.5s linear 2, glow-fade-halo 3s var(--ease) 1;
+}
+@keyframes glow-orbit { to { --glow-angle: 360deg; } }
+@keyframes glow-fade  { 0%, 100% { opacity: 0; } 12%, 80% { opacity: 1; } }
+@keyframes glow-fade-halo { 0%, 100% { opacity: 0; } 12%, 80% { opacity: .55; } }
+
 .btn__meta {
   font: 500 .6875rem/1 var(--mono);
   letter-spacing: .1em; color: var(--slate-faint);
@@ -871,6 +911,13 @@ h1, h2, h3 { text-wrap: balance; }
     transition-duration: .01ms !important;
   }
   .js .reveal { opacity: 1; transform: none; }
+  /* No travelling glow: a static accent ring instead. */
+  .cta-glow::before,
+  .cta-glow.is-glowing::before {
+    animation: none !important; opacity: 1;
+    background: var(--signal-bright);
+  }
+  .cta-glow::after { display: none; }
   .card:hover { transform: none; }
   .card:hover .card__media img { transform: none; }
 }
