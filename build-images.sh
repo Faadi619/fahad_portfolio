@@ -47,7 +47,8 @@ echo "Tab icon →  $IMG"
 python3 make-favicon.py
 
 echo "Resume →  ./"
-cp "$D/Fahad_Hussain_Resume.pdf" resume.pdf  # rendered from Fahad_Hussain_Resume.html
+# The Client CV, rendered from "../Vision 2030/Documents/cv/cv.html" by its build.sh.
+cp "../Vision 2030/Documents/Fahad_Hussain_CV_Client.pdf" resume.pdf
 printf '  %-22s %s\n' "resume.pdf" "$(du -h resume.pdf | cut -f1)"
 
 echo

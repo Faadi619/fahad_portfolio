@@ -38,17 +38,30 @@ Every card carries an authorship line. Keep it accurate:
 
 ## Regenerating images
 
-After replacing anything in `AppSpot Banners/` or swapping the CV:
+After replacing anything in `AppSpot Banners/`:
 
 ```bash
 ./build-images.sh
 ```
 
 Downscales every banner to 1600px, writes JPEGs into `assets/projects/`,
-and copies the CV to `resume.pdf`. Sources are never modified.
+and copies the Client CV to `resume.pdf`. Sources are never modified.
 
 The portrait stays PNG on purpose — its background is transparent, and JPEG
 would flatten it to white.
+
+## Updating the résumé
+
+`resume.pdf` is the Client version of the CV. Both CV versions (Full and
+Client) come from one source, `../Vision 2030/Documents/cv/cv.html`.
+Edit that file, then run:
+
+```bash
+"../Vision 2030/Documents/cv/build.sh"
+```
+
+It renders both PDFs into `../Vision 2030/Documents/`, refuses to continue
+if the Client version runs past 2 pages, and copies it here as `resume.pdf`.
 
 ## Local preview
 
