@@ -60,7 +60,7 @@ Then open http://localhost:8000.
 
 ## Deploying
 
-Live at **https://faadi619.github.io/fahad_portfolio/**
+Live at **https://fahadhussain.dev/**
 
 Pages serves `main` at `/`, so any push to `main` publishes:
 
@@ -70,3 +70,5 @@ git push
 ```
 
 `.nojekyll` is present so Jekyll doesn't touch the files.
+`CNAME` holds the custom domain (`fahadhussain.dev`). Keep it at the repo root,
+or Pages drops the domain.
